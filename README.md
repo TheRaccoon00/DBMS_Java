@@ -66,7 +66,7 @@ Projection:
   int[] atts = {0,2};   
 
   //SELECT att0,att2 FROM table;
-  p.project(res_fs_table1, atts);
+  p.project(table_scan, atts);
 ```
 
 Join:
@@ -78,15 +78,15 @@ Join:
 
   // Nested Loop
   JointureBI jbi = new JointureBI();
-  jbi.jointure(res_fs_table1,res_fs_table2,1,1);
+  jbi.jointure(table_scan_1,table_scan_2,1,1);
 
   // Hash Join
   JointureH jhash = new JointureH();
-  jhash.jointure(res_fs_table1,res_fs_table2,1,1);
+  jhash.jointure(table_scan_1,table_scan_2,1,1);
 
   //Sort Merge Join
   JointureS jsm = new JointureS();
-  jsm.jointure(res_fs_table1,res_fs_table2,1,1);
+  jsm.jointure(table_scan_1,table_scan_2,1,1);
 
 ```
 
